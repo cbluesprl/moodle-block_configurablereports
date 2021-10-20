@@ -69,7 +69,7 @@ class plugin_courses extends plugin_base{
 
             $courselist = $reportclass->elements_by_conditions($conditions);
         } else {
-            $courselist = array_keys($remotedb->get_records('course'));
+            $courselist = array_keys($remotedb->get_records_sql('SELECT * FROM {course} WHERE id > 1'));
         }
 
         $sortedcourseoptions = array();
