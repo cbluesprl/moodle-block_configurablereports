@@ -32,7 +32,7 @@ class report_courses extends report_base {
         global $DB;
 
         $elements = array();
-        $rs = $DB->get_recordset('course', null, '', 'id');
+        $rs = $DB->get_recordset_sql('SELECT * FROM {course} WHERE id > 1');
         foreach ($rs as $result) {
             $elements[] = $result->id;
         }
